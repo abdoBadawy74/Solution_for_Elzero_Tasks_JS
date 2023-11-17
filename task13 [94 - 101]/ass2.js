@@ -1,6 +1,6 @@
-let result = document.querySelector(".assign .classes-list div");
 let addInput = document.querySelector(".classes-to-add");
 let removeInput = document.querySelector(".classes-to-remove");
+let result = document.querySelector(".assign .classes-list div");
 
 // to add element
 
@@ -55,3 +55,53 @@ function createText() {
   result.appendChild(text);
 }
 createText();
+
+
+// Another solution ////////////////////////////////////////////////
+
+// let add = document.querySelector(".classes-to-add");
+// let remove = document.querySelector(".classes-to-remove");
+// let current = document.querySelector("[title='Current']");
+// let cls = document.querySelector(".classes-list div");
+// let previousClasses = [];
+
+// function addRem() {
+//   // Remove all elements onload of the page
+//   document.querySelectorAll("span").forEach((el) => el.remove());
+
+//   // Store the current classes before modification
+//   previousClasses = [...current.classList];
+
+//   // Add or remove classes
+//   let addClasses = add.value.toLowerCase().trim().split(" ");
+//   let removeClasses = remove.value.toLowerCase().trim().split(" ");
+
+//   for (let i = 0; i < addClasses.length; i++) {
+//     if (add.value) {
+//       current.classList.add(addClasses[i]);
+//     }
+
+//     if (remove.value) {
+//       current.classList.remove(removeClasses[i]);
+//     }
+//   }
+
+//   add.value = "";
+//   remove.value = "";
+
+//   // Add spans for all classes in the current element
+//   if (current.classList.length) {
+//     [...current.classList].sort().forEach((el) => {
+//       let span = document.createElement("span");
+//       span.textContent = el;
+//       cls.append(span);
+//     });
+//   } else {
+//     let span = document.createElement("span");
+//     span.textContent = "No Classes To Show";
+//     cls.append(span);
+//   }
+// }
+
+// add.onblur = addRem;
+// remove.onblur = addRem;
